@@ -1,0 +1,256 @@
+:root{
+--color1:#49668C;
+--color2:#6F87A6;
+--color3:#595347;
+--color4:#ABAEA5;
+--color5:#F2F2F2;
+--color6:#D9946C;
+--color7:#C8EBF5;
+
+/*
+rgba(73, 102, 140, 1)
+rgba(111, 135, 166, 1)
+rgba(89, 83, 71, 1)
+rgba(217, 148, 108, 1)
+rgba(200, 235, 245, 1)
+*/
+
+--gradient1:linear-gradient(45deg, #49668C 20%, #ABAEA5 60%, #D9946C);
+--gradient2:linear-gradient(45deg,rgba(73, 102, 140, .35) 25%,
+rgba(111, 135, 166, .35) 50%, rgba(217, 148, 108, .35));
+--gradient3: linear-gradient(45deg, #49668C 20%, #ABAEA5 60%, #D9946C);
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    box-sizing: border-box;
+    height: 100vh;
+    font-family: 'Arial', 'Helvetica';
+    display: flex;
+}
+main{
+    padding-top: 15vh;
+    display: flex;
+    margin-left: 20%;
+}
+section{
+    height: 70vh;
+    width: 90vw;
+    overflow: hidden;
+}
+h1{
+    color: #f1f1f1;
+    font-size: 2em;
+    margin: 0;
+    font-weight: 500;
+}
+h2{
+    color: #f1f1f1;
+}
+h3{
+    color: #f1f1f1;
+}
+p{
+    color: #f1f1f1;
+    font-size: 1.2em;
+}
+.coloredBox{
+    height: 20vh;
+    align-self: center;
+    background-image: var(--gradient2);
+    display: flex;
+}
+.coloredBoxText{
+    text-align: left;
+    margin: auto 50px; 
+    border-bottom: 5px solid var(--color6);
+}
+
+
+
+#intro{ 
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    background-image: var(--gradient1);
+}
+#intro img{
+    height: 100%;
+}
+#intro article{
+    margin: 20vh auto auto 5%;
+}
+.btn{
+    display: inline-block;
+    padding: 10px 60px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: var(--color5);
+    margin-top: 20px;
+    margin-right: 20px;
+    box-shadow:  0px 1rem 2rem rgba(0, 0, 0, 0.3);
+    transition: all .3s ease-in-out;
+}
+.btn:hover{
+    box-shadow: none;
+}
+#intro p{
+    padding: 20px 0;
+    
+}
+
+
+
+#aboutMe{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    background: url(../img/bild9.jpeg);
+}
+#aboutMe article{
+    margin: auto;
+    padding: 0 50px;
+}
+
+
+
+#projects{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    background-color: #49668C;
+}
+#projects article{
+    height: 70vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+#projects article div{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+#projects img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    -webkit-filter: brightness(.5);
+    transition: all .8s ease;
+}
+#projects img:hover{
+    -webkit-filter: brightness(1);
+    transform: scale(1.2);
+}
+
+
+
+#contact{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-image: var(--gradient1);
+    align-content: center;
+}
+#contact article{
+    padding-left: 5vw;
+}
+#contact img{
+    height: 40vh;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--color6);
+}
+#contact p{
+    padding: 10px 0 20px;
+}
+#contact ion-icon{
+    font-size: 50px;
+    color: var(--color1);
+    transition: all .4s ease-in-out;
+}
+#contact .social-media ion-icon:hover{
+    color: var(--color6);
+    opacity: .8;
+}
+#contact a{
+    text-decoration: none;
+    padding-right: 20px;
+}
+
+
+
+footer{
+    position: fixed;
+    bottom: 10%;
+}
+footer nav{
+    width: 100vw;
+    display: flex;
+    margin-left: 20%;
+}
+footer nav li{
+    list-style: none;
+    text-transform: uppercase;
+    padding: 0 20px;
+}
+footer nav li a{
+    text-decoration: none;
+    color: var(--color1);
+    transition: all .3s ease;
+}
+footer nav li a:hover{
+    color: var(--color4);
+}
+
+
+
+@media (max-width: 1000px) {
+    body,main,.default-box {
+        display: unset;
+        margin: 0;
+    }
+    section,.titel-box,#gallery {
+        width: 100%;
+    }
+    .default-box img,#gallery .img-group li {
+        height: inherit;
+        width: 100%;
+    }
+    #intro{ 
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    #gallery .img-group li img {
+    -webkit-filter: brightness(1);
+    }
+    .text-box,.titel-box {
+        padding: 2rem;
+    }
+    #intro br,footer {
+        display: none;
+    }
+    }
+
+    @media (max-width: 375px){
+        body,main,.default-box {
+        display: unset;
+        margin: 0;
+    }
+    section,.titel-box,#gallery {
+        width: 100%;
+    }
+    #aboutMe, #projects, #contact{
+        display: flex;
+        flex-direction: column;
+        font-size: .8em;
+    }
+    #projects article{
+        height: 50vh;
+        display: grid;
+        grid-template-columns: 1fr;
+
+    }
+    }
